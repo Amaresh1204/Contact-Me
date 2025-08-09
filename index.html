@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Amaresh Kambhampati</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #007BFF, #00B4D8);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .container {
+            max-width: 700px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: slideUp 1.2s ease-in-out;
+        }
+        h1 {
+            color: #007BFF;
+            margin-bottom: 15px;
+        }
+        p {
+            color: #444;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #00B4D8;
+        }
+        .contact-info {
+            margin-top: 25px;
+        }
+        .contact-item {
+            font-size: 18px;
+            margin: 10px 0;
+            transition: transform 0.2s ease;
+        }
+        .contact-item a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        .contact-item:hover {
+            transform: scale(1.05);
+        }
+        .social-icons {
+            margin-top: 20px;
+        }
+        .social-icons a {
+            text-decoration: none;
+            color: white;
+            background: #007BFF;
+            margin: 0 8px;
+            padding: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            font-size: 18px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        .social-icons a:hover {
+            background: #00B4D8;
+            transform: scale(1.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Me</h1>
+        <p>
+            We work on <span class="highlight">Full Stack Web Applications</span>,  
+            <span class="highlight">Backend Projects</span>, 
+            <span class="highlight">Frontend Development</span>, 
+            <span class="highlight">App Development</span>, 
+            and <span class="highlight">AI Models</span>.
+        </p>
+        <p>
+            If you need any projects and any Delvolepment Requirements, feel free to contact me using the details below.
+        </p>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                📞 Phone: <a href="tel:+911234567890">+91 9919914894</a> 
+            </div>
+            <div class="contact-item">
+                📧 Email: <a href="mailto:yourname@example.com">amareshero41@gmail.com</a> 
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
