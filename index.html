@@ -19,7 +19,6 @@
     <style>
         :root {
             --ink:        #0B1120;
-            --panel:      #121B2E;
             --panel-line: #22304a;
             --text:       #E8ECF3;
             --muted:      #8A97AD;
@@ -42,13 +41,60 @@
                 linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
             background-size: auto, auto, 46px 46px, 46px 46px;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             padding: 40px 24px;
+            gap: 16px;
         }
-        .card {
+
+        /* ── PAGE LAYOUT: sidebar ads + center column ── */
+        .page-layout {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* ── SIDE AD SLOTS ── */
+        .ad-side {
+            flex: 0 0 160px;
+            width: 160px;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ad-side ins { border-radius: 10px; overflow: hidden; }
+
+        /* hide side ads on smaller screens */
+        @media (max-width: 1060px) {
+            .ad-side { display: none; }
+        }
+
+        /* ── CENTER COLUMN ── */
+        .center-col {
+            flex: 1;
+            max-width: 660px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        /* ── TOP / BOTTOM AD SLOTS ── */
+        .ad-slot {
             width: 100%;
             max-width: 660px;
+            text-align: center;
+        }
+        .ad-slot ins { display: block; border-radius: 10px; overflow: hidden; }
+
+        /* ── CARD ── */
+        .card {
+            width: 100%;
             background: linear-gradient(180deg, rgba(18,27,46,0.92), rgba(11,17,32,0.92));
             border: 1px solid var(--panel-line);
             border-radius: 20px;
@@ -118,7 +164,7 @@
         .contact-card.wa .ic { background: rgba(31,158,111,0.14); color: #43d494; }
         .contact-card .k { font-family:'JetBrains Mono',monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
         .contact-card .v { font-size: 13px; font-weight: 500; text-align: center; }
-        footer { margin-top: 30px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--muted); text-align: center; }
+        footer { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--muted); text-align: center; margin-top: 14px; }
 
         .reveal { opacity: 0; transform: translateY(16px); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
         .d1 { animation-delay: .05s; } .d2 { animation-delay: .14s; } .d3 { animation-delay: .23s; }
@@ -140,47 +186,92 @@
     </style>
 </head>
 <body>
-    <main class="card">
-        <span class="status reveal d1"><span class="dot"></span> Available for new projects</span>
 
-        <h1 class="reveal d2">Got a project to build?</h1>
+    <div class="page-layout">
 
-        <p class="role reveal d2">&gt; I design &amp; build it for you<span class="caret">_</span></p>
-
-        <p class="lede reveal d3">
-            Custom web apps, mobile apps, and AI/ML projects — built from scratch,
-            fully documented, and delivered ready to present. You bring the requirement,
-            I handle the rest, from idea to finished product.
-        </p>
-
-        <p class="cap-label reveal d4">What I build</p>
-        <div class="caps reveal d4">
-            <span class="cap">Full-stack web apps</span>
-            <span class="cap">Backend &amp; APIs</span>
-            <span class="cap">Frontend &amp; UI</span>
-            <span class="cap">Mobile apps</span>
-            <span class="cap">AI &amp; ML models</span>
-            <span class="cap">Final-year projects</span>
+        <!-- LEFT SIDE AD (desktop only, 160×600 wide skyscraper) -->
+        <div class="ad-side">
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:160px;height:600px"
+                 data-ad-client="ca-pub-4240645407859032"
+                 data-ad-slot="7834592671"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
 
-        <div class="rule reveal d5"></div>
+        <!-- CENTER COLUMN -->
+        <div class="center-col">
 
-        <section class="contact reveal d5" aria-label="Contact">
-            <a class="contact-card wa" href="https://wa.me/919919914894" target="_blank" rel="noopener">
-                <span class="ic"><i class="fa-brands fa-whatsapp"></i></span>
-                <span class="k">WhatsApp</span><span class="v">Message me</span>
-            </a>
-            <a class="contact-card" href="mailto:amareshero41@gmail.com">
-                <span class="ic"><i class="fa-regular fa-envelope"></i></span>
-                <span class="k">Email</span><span class="v">amareshero41@gmail.com</span>
-            </a>
-            <a class="contact-card" href="tel:+919919914894">
-                <span class="ic"><i class="fa-solid fa-phone"></i></span>
-                <span class="k">Phone</span><span class="v">+91 99199 14894</span>
-            </a>
-        </section>
+            <!-- TOP AD -->
+            <div class="ad-slot">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-4240645407859032"
+                     data-ad-slot="7834592671"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
 
-        <footer class="reveal d6">Custom projects, built for you &middot; From idea to submission</footer>
-    </main>
+            <!-- CARD -->
+            <main class="card">
+                <span class="status reveal d1"><span class="dot"></span> Available for new projects</span>
+                <h1 class="reveal d2">Got a project to build?</h1>
+                <p class="role reveal d2">&gt; I design &amp; build it for you<span class="caret">_</span></p>
+                <p class="lede reveal d3">
+                    Custom web apps, mobile apps, and AI/ML projects — built from scratch,
+                    fully documented, and delivered ready to present. You bring the requirement,
+                    I handle the rest, from idea to finished product.
+                </p>
+                <p class="cap-label reveal d4">What I build</p>
+                <div class="caps reveal d4">
+                    <span class="cap">Full-stack web apps</span>
+                    <span class="cap">Backend &amp; APIs</span>
+                    <span class="cap">Frontend &amp; UI</span>
+                    <span class="cap">Mobile apps</span>
+                    <span class="cap">AI &amp; ML models</span>
+                    <span class="cap">Final-year projects</span>
+                </div>
+                <div class="rule reveal d5"></div>
+                <section class="contact reveal d5" aria-label="Contact">
+                    <a class="contact-card wa" href="https://wa.me/919919914894" target="_blank" rel="noopener">
+                        <span class="ic"><i class="fa-brands fa-whatsapp"></i></span>
+                        <span class="k">WhatsApp</span><span class="v">Message me</span>
+                    </a>
+                    <a class="contact-card" href="mailto:amareshero41@gmail.com">
+                        <span class="ic"><i class="fa-regular fa-envelope"></i></span>
+                        <span class="k">Email</span><span class="v">amareshero41@gmail.com</span>
+                    </a>
+                    <a class="contact-card" href="tel:+919919914894">
+                        <span class="ic"><i class="fa-solid fa-phone"></i></span>
+                        <span class="k">Phone</span><span class="v">+91 99199 14894</span>
+                    </a>
+                </section>
+                <footer class="reveal d6">Custom projects, built for you &middot; From idea to submission</footer>
+            </main>
+
+            <!-- BOTTOM AD -->
+            <div class="ad-slot">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-4240645407859032"
+                     data-ad-slot="7834592671"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+        </div><!-- /center-col -->
+
+        <!-- RIGHT SIDE AD (desktop only, 160×600 wide skyscraper) -->
+        <div class="ad-side">
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:160px;height:600px"
+                 data-ad-client="ca-pub-4240645407859032"
+                 data-ad-slot="7834592671"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+    </div><!-- /page-layout -->
+
 </body>
 </html>
