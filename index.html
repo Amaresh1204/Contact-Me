@@ -3,109 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me - Amaresh Kambhampati</title>
+    <title>Custom Projects Built For You</title>
+    <meta name="description" content="Custom web apps, mobile apps, and AI/ML projects built from scratch for students and teams. Full source code, documentation, and support until submission.">
+
+    <!-- Google AdSense -->
+    <meta name="google-adsense-account" content="ca-pub-4240645407859032">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4240645407859032"
+         crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
+        :root {
+            --ink:        #0B1120;
+            --panel:      #121B2E;
+            --panel-line: #22304a;
+            --text:       #E8ECF3;
+            --muted:      #8A97AD;
+            --accent:     #F4B860;
+            --accent-dim: #b7863b;
+            --code:       #6FD3C6;
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #007BFF, #00B4D8);
             margin: 0;
-            padding: 0;
+            min-height: 100vh;
+            font-family: 'Inter', system-ui, sans-serif;
+            color: var(--text);
+            background: var(--ink);
+            background-image:
+                radial-gradient(900px 600px at 78% -10%, rgba(244,184,96,0.10), transparent 60%),
+                radial-gradient(700px 500px at 0% 100%, rgba(111,211,198,0.06), transparent 55%),
+                linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+            background-size: auto, auto, 46px 46px, 46px 46px;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            animation: fadeIn 1.5s ease-in-out;
+            padding: 40px 24px;
         }
-        .container {
-            max-width: 700px;
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            animation: slideUp 1.2s ease-in-out;
+        .card {
+            width: 100%;
+            max-width: 660px;
+            background: linear-gradient(180deg, rgba(18,27,46,0.92), rgba(11,17,32,0.92));
+            border: 1px solid var(--panel-line);
+            border-radius: 20px;
+            padding: 44px clamp(26px, 5vw, 50px) 38px;
+            box-shadow: 0 30px 80px -30px rgba(0,0,0,0.7);
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: "";
+            position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0.8;
+        }
+        .status {
+            display: inline-flex; align-items: center; gap: 9px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+            color: var(--muted); border: 1px solid var(--panel-line);
+            border-radius: 999px; padding: 7px 14px;
+        }
+        .dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 0 rgba(244,184,96,0.55);
+            animation: pulse 2.4s infinite;
         }
         h1 {
-            color: #007BFF;
-            margin-bottom: 15px;
+            font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+            font-size: clamp(30px, 5.4vw, 46px); line-height: 1.06;
+            letter-spacing: -0.02em; margin: 24px 0 0;
         }
-        p {
-            color: #444;
-            font-size: 18px;
-            line-height: 1.6;
+        .role {
+            font-family: 'JetBrains Mono', monospace; font-size: 14.5px;
+            color: var(--code); margin: 14px 0 0;
         }
-        .highlight {
-            font-weight: bold;
-            color: #00B4D8;
+        .role .caret { color: var(--accent); animation: blink 1.15s step-end infinite; }
+        .lede {
+            color: var(--muted); font-size: 16px; line-height: 1.6;
+            max-width: 52ch; margin: 20px 0 0;
         }
-        .contact-info {
-            margin-top: 25px;
+        .cap-label {
+            font-family: 'JetBrains Mono', monospace; font-size: 11px;
+            letter-spacing: 0.18em; text-transform: uppercase;
+            color: var(--muted); margin: 30px 0 13px;
         }
-        .contact-item {
-            font-size: 18px;
-            margin: 10px 0;
-            transition: transform 0.2s ease;
+        .caps { display: flex; flex-wrap: wrap; gap: 9px; }
+        .cap {
+            font-size: 13.5px; color: var(--text);
+            background: rgba(255,255,255,0.03); border: 1px solid var(--panel-line);
+            border-radius: 8px; padding: 7px 13px;
+            transition: border-color .25s ease, color .25s ease, transform .25s ease;
         }
-        .contact-item a {
-            text-decoration: none;
-            color: #007BFF;
-            font-weight: bold;
+        .cap:hover { border-color: var(--accent-dim); color: var(--accent); transform: translateY(-2px); }
+        .rule { height: 1px; background: var(--panel-line); margin: 32px 0 26px; }
+        .contact { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        .contact-card {
+            display: flex; flex-direction: column; align-items: center; gap: 9px;
+            text-decoration: none; color: var(--text);
+            background: rgba(255,255,255,0.02); border: 1px solid var(--panel-line);
+            border-radius: 12px; padding: 18px 12px;
+            transition: border-color .25s ease, background .25s ease, transform .25s ease;
         }
-        .contact-item:hover {
-            transform: scale(1.05);
+        .contact-card:hover { border-color: var(--accent-dim); background: rgba(244,184,96,0.05); transform: translateY(-2px); }
+        .contact-card.wa:hover { border-color: #1f9e6f; background: rgba(31,158,111,0.08); }
+        .contact-card .ic { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 10px; background: rgba(244,184,96,0.10); color: var(--accent); font-size: 16px; }
+        .contact-card.wa .ic { background: rgba(31,158,111,0.14); color: #43d494; }
+        .contact-card .k { font-family:'JetBrains Mono',monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+        .contact-card .v { font-size: 13px; font-weight: 500; text-align: center; }
+        footer { margin-top: 30px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--muted); text-align: center; }
+
+        .reveal { opacity: 0; transform: translateY(16px); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
+        .d1 { animation-delay: .05s; } .d2 { animation-delay: .14s; } .d3 { animation-delay: .23s; }
+        .d4 { animation-delay: .32s; } .d5 { animation-delay: .41s; } .d6 { animation-delay: .50s; }
+
+        @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(244,184,96,0.55); } 70% { box-shadow: 0 0 0 9px rgba(244,184,96,0); } 100% { box-shadow: 0 0 0 0 rgba(244,184,96,0); } }
+        @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+        @media (max-width: 460px) {
+            .contact { grid-template-columns: 1fr; }
+            .card { padding: 34px 22px 30px; }
         }
-        .social-icons {
-            margin-top: 20px;
-        }
-        .social-icons a {
-            text-decoration: none;
-            color: white;
-            background: #007BFF;
-            margin: 0 8px;
-            padding: 12px;
-            border-radius: 50%;
-            display: inline-block;
-            font-size: 18px;
-            transition: background 0.3s ease, transform 0.2s ease;
-        }
-        .social-icons a:hover {
-            background: #00B4D8;
-            transform: scale(1.1);
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { animation: none; opacity: 1; transform: none; }
+            .dot, .role .caret { animation: none; }
+            html { scroll-behavior: auto; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Contact Me</h1>
-        <p>
-            We work on <span class="highlight">Full Stack Web Applications</span>,  
-            <span class="highlight">Backend Projects</span>, 
-            <span class="highlight">Frontend Development</span>, 
-            <span class="highlight">App Development</span>, 
-            and <span class="highlight">AI Models</span>.
+    <main class="card">
+        <span class="status reveal d1"><span class="dot"></span> Available for new projects</span>
+
+        <h1 class="reveal d2">Got a project to build?</h1>
+
+        <p class="role reveal d2">&gt; I design &amp; build it for you<span class="caret">_</span></p>
+
+        <p class="lede reveal d3">
+            Custom web apps, mobile apps, and AI/ML projects — built from scratch,
+            fully documented, and delivered ready to present. You bring the requirement,
+            I handle the rest, from idea to finished product.
         </p>
-        <p>
-            If you need any projects and any Delvolepment Requirements, feel free to contact me using the details below.
-        </p>
-        
-        <div class="contact-info">
-            <div class="contact-item">
-                📞 Phone: <a href="tel:+911234567890">+91 9919914894</a> 
-            </div>
-            <div class="contact-item">
-                📧 Email: <a href="mailto:yourname@example.com">amareshero41@gmail.com</a> 
-            </div>
+
+        <p class="cap-label reveal d4">What I build</p>
+        <div class="caps reveal d4">
+            <span class="cap">Full-stack web apps</span>
+            <span class="cap">Backend &amp; APIs</span>
+            <span class="cap">Frontend &amp; UI</span>
+            <span class="cap">Mobile apps</span>
+            <span class="cap">AI &amp; ML models</span>
+            <span class="cap">Final-year projects</span>
         </div>
 
-    </div>
+        <div class="rule reveal d5"></div>
+
+        <section class="contact reveal d5" aria-label="Contact">
+            <a class="contact-card wa" href="https://wa.me/919919914894" target="_blank" rel="noopener">
+                <span class="ic"><i class="fa-brands fa-whatsapp"></i></span>
+                <span class="k">WhatsApp</span><span class="v">Message me</span>
+            </a>
+            <a class="contact-card" href="mailto:amareshero41@gmail.com">
+                <span class="ic"><i class="fa-regular fa-envelope"></i></span>
+                <span class="k">Email</span><span class="v">amareshero41@gmail.com</span>
+            </a>
+            <a class="contact-card" href="tel:+919919914894">
+                <span class="ic"><i class="fa-solid fa-phone"></i></span>
+                <span class="k">Phone</span><span class="v">+91 99199 14894</span>
+            </a>
+        </section>
+
+        <footer class="reveal d6">Custom projects, built for you &middot; From idea to submission</footer>
+    </main>
 </body>
 </html>
